@@ -1,5 +1,7 @@
 const theme = require("./content/settings/theme.json")
 const site = require("./content/settings/site.json")
+const path = require('path')
+const REPO_ABSOLUTE_PATH = path.join(process.cwd(), '../..')
 
 module.exports = {
   plugins: [
@@ -23,7 +25,22 @@ module.exports = {
             },
           },
         },
-        plugins: ["gatsby-tinacms-git", "gatsby-tinacms-remark"],
+        plugins: [
+          'gatsby-tinacms-json',
+          'gatsby-tinacms-remark',
+          {
+            resolve: 'gatsby-tinacms-git',
+            options: {
+              pathToRepo: REPO_ABSOLUTE_PATH,
+              pathToContent: 'packages/demo-gatsby',
+              defaultCommitMessage: 'Edited with TinaCMS',
+              defaultCommitName: 'thegrimeydev',
+              defaultCommitEmail: 'thegrimeydev@gmail.com',
+              pushOnCommit: false,
+              gitRemote: 'https://github.com/thegrimeydev/tina-test.git',
+            },
+          },
+        ],
       },
     },
     {
