@@ -37,7 +37,7 @@ module.exports = {
               defaultCommitName: 'thegrimeydev',
               defaultCommitEmail: 'thegrimeydev@gmail.com',
               pushOnCommit: false,
-              gitRemote: 'https://github.com/thegrimeydev/tina-test.git',
+              gitRemote: 'https://github.com/thegrimeydev/supportPHL-test.git',
             },
           },
         ],
